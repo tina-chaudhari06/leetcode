@@ -4,14 +4,11 @@ class Solution {
 
         Arrays.sort(strs);
 
-        char[] first = strs[0].toCharArray();
-        char[] last = strs[strs.length - 1].toCharArray();
-
-        for(int i = 0; i < first.length; i++){
-            if(first[i] != last[i]){
+        for(int i = 0; i < strs[0].length(); i++){
+            if(strs[0].charAt(i) != strs[strs.length - 1].charAt(i)){
                 break;
             }
-            result.append(first[i]);
+            result.append(strs[0].charAt(i));
         }
         return result.toString();
     }
