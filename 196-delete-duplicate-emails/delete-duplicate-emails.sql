@@ -1,10 +1,9 @@
 DELETE FROM Person
-WHERE id IN(
+WHERE id NOT IN(
 SELECT id
 FROM (
-    SELECT p2.id
-    FROM Person p1, Person p2
-    WHERE p1.email = p2.email
-    AND p1.id < p2.id
+    SELECT MIN(id) id
+    FROM Person 
+    GROUP BY email
 ) d
 );
