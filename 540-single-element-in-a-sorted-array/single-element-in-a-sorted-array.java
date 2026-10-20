@@ -9,9 +9,9 @@ class Solution {
         while(s <= e){
             int mid = (s + e)/2;
 
-            if(mid == 0 && nums[mid] != nums[mid+1]) return nums[mid];
-            if(mid == n-1 && nums[mid-1] != nums[mid]) return nums[mid];
-            
+            if(mid == 0) return nums[mid];
+            if(mid == n-1) return nums[mid];
+
             if(nums[mid - 1] != nums[mid] && nums[mid] != nums[mid+1]){
                 return nums[mid];
             }
