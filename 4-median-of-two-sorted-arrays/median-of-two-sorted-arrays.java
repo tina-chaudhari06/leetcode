@@ -6,18 +6,6 @@ class Solution {
 
         double[] arr = new double[n1 + n2];
 
-        while(i < n1 && j < n2){
-            if(nums1[i] < nums2[j]){
-                arr[k] = nums1[i];
-                i++;
-                k++;
-            }else{
-                arr[k] = nums2[j];
-                j++;
-                k++;
-            }
-        }
-
         while(i < n1){
             arr[k] = nums1[i];
             i++;
@@ -29,6 +17,8 @@ class Solution {
             j++;
             k++;
         }
+
+        Arrays.sort(arr);
 
         if(arr.length % 2 != 0) return arr[arr.length/2];
         return (arr[arr.length/2 - 1] + arr[arr.length/2])/2;
